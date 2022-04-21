@@ -19,9 +19,6 @@ function App() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(name.current.value);
-          console.log(date.current.value);
-          console.log("submit");
 
           const dateNewFormatArray = date.current.value.split("-");
           const dateNewFormat = `${parseInt(dateNewFormatArray[2])}/${parseInt(
@@ -33,8 +30,15 @@ function App() {
             name: name.current.value,
             birthday: dateNewFormat,
           };
-          console.log(birthday);
-          setPeople([...people, birthday]);
+
+          if (birthday.name && birthday.birthday !== `NaN/NaN/NaN`) {
+            setPeople([...people, birthday]);
+          } else {
+            console.log("ereeor");
+          }
+
+          name.current.value = "";
+          date.current.value = "";
         }}
       >
         <label htmlFor="name"></label>
