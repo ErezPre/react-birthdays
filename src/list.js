@@ -1,6 +1,7 @@
 import React from "react";
+import Person from "./Person";
 
-const list = ({ people }) => {
+const List = ({ people, setPeople }) => {
   // console.log(people[1].name);
   // if (people.length === 0) {
   //   return <h1>empty list</h1>;
@@ -10,13 +11,16 @@ const list = ({ people }) => {
       {people.map((person) => {
         const { id, name, birthday } = person;
         return (
-          <h1 key={id}>
-            {name} {birthday}
-          </h1>
+          <Person
+            key={id}
+            person={person}
+            setPeople={setPeople}
+            people={people}
+          />
         );
       })}
     </>
   );
 };
 
-export default list;
+export default List;

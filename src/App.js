@@ -1,7 +1,7 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useRef } from "react";
-import List from "./list";
+import List from "./List";
 import data from "./data";
 
 function App() {
@@ -33,12 +33,11 @@ function App() {
 
           if (birthday.name && birthday.birthday !== `NaN/NaN/NaN`) {
             setPeople([...people, birthday]);
+            name.current.value = "";
+            date.current.value = "";
           } else {
             console.log("ereeor");
           }
-
-          name.current.value = "";
-          date.current.value = "";
         }}
       >
         <label htmlFor="name"></label>
@@ -49,7 +48,7 @@ function App() {
       </form>
       <br />
 
-      <List people={people} />
+      <List people={people} setPeople={setPeople} people={people} />
       <button onClick={() => setPeople([])}>clear all</button>
     </>
   );
