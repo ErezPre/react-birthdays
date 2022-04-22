@@ -1,7 +1,7 @@
 import React from "react";
 import Person from "./Person";
 
-const List = ({ people, setPeople }) => {
+const List = ({ people, setPeople, setRemovedItem }) => {
   // console.log(people[1].name);
   // if (people.length === 0) {
   //   return <h1>empty list</h1>;
@@ -16,6 +16,7 @@ const List = ({ people, setPeople }) => {
             person={person}
             setPeople={setPeople}
             people={people}
+            setRemovedItem={setRemovedItem}
           />
         );
       })}

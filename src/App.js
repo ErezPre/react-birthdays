@@ -13,9 +13,28 @@ function App() {
   );
   const name = useRef(null);
   const date = useRef(null);
+  const [addedItem, setAddedItem] = useState(false);
+
+  const addedBirthdaySuccessfully = () => {
+    setTimeout(() => {
+      setAddedItem(false);
+    }, 3000);
+    return "added birthday successfully";
+  };
+  const [removedItem, setRemovedItem] = React.useState(false);
+  const removedBirthdaySuccessfully = () => {
+    setTimeout(() => {
+      setRemovedItem(false);
+    }, 3000);
+    return "removed birthday successfully";
+  };
+  const [clearedAll, setClearedAll] = React.useState(false);
+
   return (
     <>
-      <h1>birthdays list:</h1>
+      <h1>{addedItem && addedBirthdaySuccessfully()}</h1>
+      <h1>{removedItem && removedBirthdaySuccessfully()}</h1>
+      <h1 className="title">birthdays list:</h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -35,6 +54,7 @@ function App() {
             setPeople([...people, birthday]);
             name.current.value = "";
             date.current.value = "";
+            setAddedItem(true);
           } else {
             console.log("ereeor");
           }
@@ -44,12 +64,27 @@ function App() {
         <input type="text" name="name" ref={name} />
         <label htmlFor="date"></label>
         <input type="date" name="date" ref={date} />
-        <button type="submit">add birthday</button>
+
+        <button className="btn" type="submit">
+          add birthday
+        </button>
       </form>
       <br />
 
-      <List people={people} setPeople={setPeople} people={people} />
-      <button onClick={() => setPeople([])}>clear all</button>
+      <List
+        people={people}
+        setPeople={setPeople}
+        people={people}
+        setRemovedItem={setRemovedItem}
+      />
+      <button
+        className="btn"
+        onClick={() => {
+          setPeople([]);
+        }}
+      >
+        clear all
+      </button>
     </>
   );
 }

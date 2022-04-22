@@ -1,0 +1,27 @@
+.btn {
+    font-family: helvetica;
+    font-weight: bold;
+    color: #14396A !important;
+    font-size: 14px;
+    text-shadow: 1px 1px 0px #7CACDE;
+    box-shadow: 2px 2px 9px #BEE2F9;
+    padding: 12px 15px;
+    border-radius: 17px;
+    border: 2px solid #D6A913;
+    background: #63B8EE;
+    cursor: pointer;
+  }
+  .btn:hover {
+    color: #14396A !important;
+    background: #468CCF;
+  }
+  .title {
+    color: #9c4bb9;
+line-height: 1.5;
+letter-spacing: 4px;
+word-spacing: 2px;
+text-align: center;
+text-decoration: none;
+text-transform: capitalize;
+  }
+  

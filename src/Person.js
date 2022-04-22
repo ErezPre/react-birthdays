@@ -1,19 +1,23 @@
 import React from "react";
 
-const person = ({ person, setPeople, people }) => {
+const Person = ({ person, setPeople, people, setRemovedItem }) => {
   const { id, name, birthday } = person;
   return (
-    <h1>
-      {name} {birthday}
-      <button
-        onClick={() => {
-          setPeople(people.filter((person) => person.id !== id));
-        }}
-      >
-        remove
-      </button>
-    </h1>
+    <>
+      <h1>
+        {name} {birthday}
+        <button
+          className="btn"
+          onClick={() => {
+            setPeople(people.filter((person) => person.id !== id));
+            setRemovedItem(true);
+          }}
+        >
+          remove
+        </button>
+      </h1>
+    </>
   );
 };
 
-export default person;
+export default Person;
