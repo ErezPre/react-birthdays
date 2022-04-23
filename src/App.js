@@ -19,72 +19,85 @@ function App() {
     setTimeout(() => {
       setAddedItem(false);
     }, 3000);
-    return "added birthday successfully";
+    return "birthday added";
   };
   const [removedItem, setRemovedItem] = React.useState(false);
   const removedBirthdaySuccessfully = () => {
-    setTimeout(() => {
+    let timeout = setTimeout(() => {
       setRemovedItem(false);
     }, 3000);
-    return "removed birthday successfully";
+    return "birthday removed";
   };
   const [clearedAll, setClearedAll] = React.useState(false);
 
   return (
     <>
-      <h1>{addedItem && addedBirthdaySuccessfully()}</h1>
-      <h1>{removedItem && removedBirthdaySuccessfully()}</h1>
-      <h1 className="title">birthdays list:</h1>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
+      <main className="container">
+        <h1 className="title">birthdays list</h1>
 
-          const dateNewFormatArray = date.current.value.split("-");
-          const dateNewFormat = `${parseInt(dateNewFormatArray[2])}/${parseInt(
-            dateNewFormatArray[1]
-          )}/${parseInt(dateNewFormatArray[0])}`;
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
 
-          const birthday = {
-            id: new Date().getTime(),
-            name: name.current.value,
-            birthday: dateNewFormat,
-          };
+            const dateNewFormatArray = date.current.value.split("-");
+            const dateNewFormat = `${parseInt(
+              dateNewFormatArray[2]
+            )}/${parseInt(dateNewFormatArray[1])}/${parseInt(
+              dateNewFormatArray[0]
+            )}`;
 
-          if (birthday.name && birthday.birthday !== `NaN/NaN/NaN`) {
-            setPeople([...people, birthday]);
-            name.current.value = "";
-            date.current.value = "";
-            setAddedItem(true);
-          } else {
-            console.log("ereeor");
-          }
-        }}
-      >
-        <label htmlFor="name"></label>
-        <input type="text" name="name" ref={name} />
-        <label htmlFor="date"></label>
-        <input type="date" name="date" ref={date} />
+            const birthday = {
+              id: new Date().getTime(),
+              name: name.current.value,
+              birthday: dateNewFormat,
+            };
 
-        <button className="btn" type="submit">
-          add birthday
+            if (birthday.name && birthday.birthday !== `NaN/NaN/NaN`) {
+              setPeople([...people, birthday]);
+              name.current.value = "";
+              date.current.value = "";
+              setAddedItem(true);
+            } else {
+              console.log("ereeor");
+            }
+          }}
+        >
+          <label class="form-label formElement" htmlFor="name">
+            name:
+          </label>
+          <input class="formElement" type="text" name="name" ref={name} />
+          <label class="form-label formElement" htmlFor="date">
+            date:
+          </label>
+          <input class="formElement" type="date" name="date" ref={date} />
+
+          <button className="btn-add btn" type="submit">
+            add birthday
+          </button>
+        </form>
+        {/* <div className="filler">&</div> */}
+        <h1 className={addedItem ? "alert alert-positive" : ""}>
+          {addedItem && addedBirthdaySuccessfully()}
+        </h1>
+        <h1 className={removedItem ? "alert alert-negative" : ""}>
+          {removedItem && removedBirthdaySuccessfully()}
+        </h1>
+
+        <List
+          people={people}
+          setPeople={setPeople}
+          people={people}
+          setRemovedItem={setRemovedItem}
+        />
+        <button
+          className="btn btn-clear"
+          onClick={() => {
+            setPeople([]);
+          }}
+        >
+          clear all
         </button>
-      </form>
-      <br />
-
-      <List
-        people={people}
-        setPeople={setPeople}
-        people={people}
-        setRemovedItem={setRemovedItem}
-      />
-      <button
-        className="btn"
-        onClick={() => {
-          setPeople([]);
-        }}
-      >
-        clear all
-      </button>
+      </main>
     </>
   );
 }

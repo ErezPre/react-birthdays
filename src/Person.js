@@ -5,7 +5,10 @@ const Person = ({ person, setPeople, people, setRemovedItem }) => {
   return (
     <>
       <h1>
-        {name} {birthday}
+        <span className="person">
+          {name} {birthday}
+        </span>
+
         <button
           className="btn"
           onClick={() => {
