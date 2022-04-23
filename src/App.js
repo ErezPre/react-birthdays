@@ -23,7 +23,7 @@ function App() {
   };
   const [removedItem, setRemovedItem] = React.useState(false);
   const removedBirthdaySuccessfully = () => {
-    let timeout = setTimeout(() => {
+    setTimeout(() => {
       setRemovedItem(false);
     }, 3000);
     return "birthday removed";
