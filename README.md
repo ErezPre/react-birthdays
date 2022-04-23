@@ -1,5 +1,5 @@
 eee
 
-https://erezpre.github.io/react-birthdays/
+https://erezpre-react-birthdays.netlify.app/
 
 
