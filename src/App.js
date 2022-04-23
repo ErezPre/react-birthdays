@@ -62,14 +62,14 @@ function App() {
             }
           }}
         >
-          <label class="form-label formElement" htmlFor="name">
+          <label className="form-label formElement" htmlFor="name">
             name:
           </label>
-          <input class="formElement" type="text" name="name" ref={name} />
-          <label class="form-label formElement" htmlFor="date">
+          <input className="formElement" type="text" name="name" ref={name} />
+          <label className="form-label formElement" htmlFor="date">
             date:
           </label>
-          <input class="formElement" type="date" name="date" ref={date} />
+          <input className="formElement" type="date" name="date" ref={date} />
 
           <button className="btn-add btn" type="submit">
             add birthday
@@ -86,7 +86,6 @@ function App() {
         <List
           people={people}
           setPeople={setPeople}
-          people={people}
           setRemovedItem={setRemovedItem}
         />
         <button
