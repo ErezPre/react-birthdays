@@ -28,7 +28,7 @@ function App() {
     }, 3000);
     return "birthday removed";
   };
-  const [clearedAll, setClearedAll] = React.useState(false);
+  // const [clearedAll, setClearedAll] = React.useState(false);
   //
   return (
     <>
