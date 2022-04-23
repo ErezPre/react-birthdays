@@ -7,10 +7,10 @@ import data from "./data";
 function App() {
   const [people, setPeople] = useState(data);
   const date1 = new Date();
-  console.log(new Date().getTime());
-  console.log(
-    `${date1.getDate()}/${date1.getMonth() + 1}/${date1.getFullYear()}`
-  );
+  // console.log(new Date().getTime());
+  // console.log(
+  //   `${date1.getDate()}/${date1.getMonth() + 1}/${date1.getFullYear()}`
+  // );
   const name = useRef(null);
   const date = useRef(null);
   const [addedItem, setAddedItem] = useState(false);
@@ -27,6 +27,13 @@ function App() {
       setRemovedItem(false);
     }, 3000);
     return "birthday removed";
+  };
+  const [inputError, setInputError] = React.useState(false);
+  const handleInputError = () => {
+    setTimeout(() => {
+      setInputError(false);
+    }, 7000);
+    return "input error: make sure you entered name and date";
   };
   // const [clearedAll, setClearedAll] = React.useState(false);
 
@@ -58,7 +65,7 @@ function App() {
               date.current.value = "";
               setAddedItem(true);
             } else {
-              console.log("ereeor");
+              setInputError(true);
             }
           }}
         >
@@ -81,6 +88,9 @@ function App() {
         </h1>
         <h1 className={removedItem ? "alert alert-negative" : ""}>
           {removedItem && removedBirthdaySuccessfully()}
+        </h1>
+        <h1 className={inputError ? "alert alert-negative" : ""}>
+          {inputError && handleInputError()}
         </h1>
 
         <List
