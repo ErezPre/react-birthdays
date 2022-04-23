@@ -1,7 +1,7 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useRef } from "react";
-import List from "./List.js";
+import List from "./List";
 import data from "./data";
 
 function App() {
