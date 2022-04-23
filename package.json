@@ -1,6 +1,7 @@
 {
-  "homepage" : "https://erezpre.github.io/react-birthdays/",
+  
   "name": "react-birthdays",
+  "homepage" : "https://erezpre.github.io/react-birthdays/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
