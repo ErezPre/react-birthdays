@@ -1,3 +1,0 @@
-[submodule "react-birthdays"]
-	path = src/index.js
-	url = https://github.com/ErezPre/react-birthdays.git
