@@ -1,4 +1,5 @@
-react-birthdays
+# react-birthdays
+
 This is a basic React project that demonstrates React skills:
 
 - Try adding birthdays to the birthdays list.
