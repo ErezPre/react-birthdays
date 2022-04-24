@@ -100,6 +100,7 @@ main {
   width: 100%;
   line-height: 30px;
   overflow-wrap: break-word;
+  /* margin-bottom: 1000px; */
 }
 input {
   border-radius: 10px;
@@ -144,7 +145,7 @@ input {
   flex-wrap: nowrap;
   justify-content: center;
   margin: 0;
-  gap: -100px;
+  /* gap: -100px; */
 }
 form {
   display: flex;
@@ -152,5 +153,5 @@ form {
   justify-content: center;
 }
 .person-remove {
-  flex-wrap: wrap;
+  line-height: 60px;
 }
