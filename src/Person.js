@@ -4,7 +4,7 @@ const Person = ({ person, setPeople, people, setRemovedItem }) => {
   const { id, name, birthday } = person;
   return (
     <>
-      <h1>
+      <h1 className="person-remove">
         <span className="person">
           {name} {birthday}
         </span>

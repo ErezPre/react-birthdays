@@ -151,3 +151,6 @@ form {
   flex-wrap: wrap;
   justify-content: center;
 }
+.person-remove {
+  flex-wrap: wrap;
+}
