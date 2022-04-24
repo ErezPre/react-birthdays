@@ -69,15 +69,18 @@ function App() {
             }
           }}
         >
-          <label className="form-label formElement" htmlFor="name">
-            name:
-          </label>
-          <input className="formElement" type="text" name="name" ref={name} />
-          <label className="form-label formElement" htmlFor="date">
-            date:
-          </label>
-          <input className="formElement" type="date" name="date" ref={date} />
-
+          <div className="input-element">
+            <label className="form-label formElement" htmlFor="name">
+              name:
+            </label>
+            <input className="formElement" type="text" name="name" ref={name} />
+          </div>
+          <div className="input-element">
+            <label className="form-label formElement" htmlFor="date">
+              date:
+            </label>
+            <input className="formElement" type="date" name="date" ref={date} />
+          </div>
           <button className="btn-add btn" type="submit">
             add birthday
           </button>
